@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import statsmodels.api as sm
 
 # Configuration de la page
 st.set_page_config(page_title="Observatoire Grand Nokoué", layout="wide")
@@ -17,7 +18,6 @@ st.metric(label=f"Distance vers Cotonou", value=f"{km_prix[depart]} km")
 
 # --- FONCTIONNALITÉ 2 : GRAPHIQUE INTERACTIF ---
 st.subheader("Corrélation Distance / Prix du loyer")
-# Charge ici ton tableau de données consolidées
 data = pd.DataFrame({
     'Commune': ["Cotonou", "Calavi", "Porto-Novo", "Sèmè", "Ouidah"],
     'Distance': [1, 16, 32, 18, 38],
@@ -29,3 +29,6 @@ st.plotly_chart(fig, use_container_width=True)
 
 # --- FONCTIONNALITÉ 3 : RECOMMANDATIONS ---
 st.info("💡 Conseil Géomatique : Le développement du corridor Nord-Ouest (Calavi) nécessite une priorité sur le transport de masse.")
+```
+
+
